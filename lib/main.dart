@@ -15,6 +15,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
+        textTheme: const TextTheme(
+          bodyLarge: TextStyle(fontSize: 16),
+          bodyMedium: TextStyle(fontSize: 16),
+        ),
       ),
       home: const MyHomePage(),
     );
@@ -26,18 +30,21 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        color: Colors.red,
-        width: 250,
-        height: 125,
-        padding: const EdgeInsets.all(10.0),
-        child: Container(
-          color: Colors.green,
-          width: 275,
-          height: 175,
+    return Row(
+      children: <Widget>[
+        Expanded(
+          child: Container(
+            color: Colors.redAccent,
+            child: Text('Hello Lorem ipsum'),
+          ),
         ),
-      ),
+        Expanded(
+          child: Container(
+            color: Colors.green,
+            child: Text('Unconstraints'),
+          ),
+        ),
+      ],
     );
-  }
-}
+  } // override -> cek README.md
+} //class // yg container ijo gak pake expanded //Expanded bisa diganti ke Flexible
